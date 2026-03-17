@@ -1,6 +1,7 @@
 import random
 from tabulate import tabulate
 
+
 class LootBox:
     def __init__(self, name: str, drop_rates: dict):
         self.name = name
@@ -14,6 +15,7 @@ class LootBox:
             if rand < cumulative:
                 return item
         return "ничего"  # на случай ошибки округления
+
 
 def main():
     # Сундук с лутом: предметы и их вероятности
@@ -33,6 +35,7 @@ def main():
     # Красивый вывод таблицы через стороннюю библиотеку
     headers = ["Попытка", "Выпавший предмет"]
     print(tabulate(results, headers=headers, tablefmt="grid"))
+
 
 if __name__ == "__main__":
     main()
